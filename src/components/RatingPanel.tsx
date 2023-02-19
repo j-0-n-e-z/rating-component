@@ -16,7 +16,7 @@ export const RatingPanel: FC<RatingPanelPropsType> = ({
 
 	return (
 		<form onSubmit={handleFormSubmitted} className={styles.panel}>
-			<img className={styles.star} src='/icon-star.svg' alt='star'></img>
+			<img className={styles.star} src='./icon-star.svg' alt='star'></img>
 			<h1 className={styles.title}>How did we do?</h1>
 			<p className={styles.text}>
 				Please let us know how we did with your support request. All feedback is
