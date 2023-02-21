@@ -28,6 +28,7 @@ export const RatingPanel: FC<RatingPanelPropsType> = ({
 						ref={ratingOrSubmitButton}
 						key={rating}
 						type='button'
+						onFocus={() => setSelectedRating(rating)}
 						onClick={() => setSelectedRating(rating)}
 						className={styles.rating}
 					>
