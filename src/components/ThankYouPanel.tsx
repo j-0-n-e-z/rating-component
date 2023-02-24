@@ -1,8 +1,12 @@
 import { FC } from 'react'
-import styles from './ThankYouPanel.module.scss'
 import panelStyles from './Panel.module.scss'
+import styles from './ThankYouPanel.module.scss'
 
-export const ThankYouPanel: FC<ThankYouPanelPropsType> = ({
+type ThankYouPanelProps = {
+	selectedRating: number
+}
+
+export const ThankYouPanel: FC<ThankYouPanelProps> = ({
 	selectedRating
 }) => {
 	return (
@@ -18,8 +22,4 @@ export const ThankYouPanel: FC<ThankYouPanelPropsType> = ({
 			</p>
 		</div>
 	)
-}
-
-type ThankYouPanelPropsType = {
-	selectedRating: number
 }

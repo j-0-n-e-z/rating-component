@@ -1,8 +1,8 @@
-import { FC, ReactElement, useEffect, useRef, useState } from 'react'
-import { useOnClickOutside } from '../hooks/useOnClickOutside'
-import styles from './RatingPanel.module.scss'
-import panelStyles from './Panel.module.scss'
 import cn from 'classnames'
+import { FC, useState } from 'react'
+import panelStyles from './Panel.module.scss'
+import styles from './RatingPanel.module.scss'
+import { useOnClickOutside } from '../hooks/useOnClickOutside'
 
 type RatingPanelProps = {
 	setSelectedRating: React.Dispatch<React.SetStateAction<number | null>>
@@ -11,8 +11,7 @@ type RatingPanelProps = {
 export const RatingPanel: FC<RatingPanelProps> = ({ setSelectedRating }) => {
 	const [currentRating, setCurrentRating] = useState<number | null>(null)
 
-	const submitButtonRef = useRef(null)
-	useOnClickOutside(submitButtonRef, () => setCurrentRating(null))
+	useOnClickOutside(() => setCurrentRating(null))
 
 	const handleFormSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
@@ -47,7 +46,6 @@ export const RatingPanel: FC<RatingPanelProps> = ({ setSelectedRating }) => {
 				))}
 			</div>
 			<button
-				ref={submitButtonRef}
 				type='submit'
 				disabled={!currentRating}
 				className={styles.submit}

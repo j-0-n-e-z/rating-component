@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import './App.css'
+import { useState } from 'react'
 import { RatingPanel } from './components/RatingPanel'
 import { ThankYouPanel } from './components/ThankYouPanel'
 
