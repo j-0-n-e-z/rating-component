@@ -12,9 +12,7 @@ export const RatingPanel: FC<RatingPanelProps> = ({ setSelectedRating }) => {
 	const [currentRating, setCurrentRating] = useState<number | null>(null)
 
 	const submitButtonRef = useRef(null)
-	useOnClickOutside(submitButtonRef, currentRating, () =>
-		setCurrentRating(null)
-	)
+	useOnClickOutside(submitButtonRef, () => setCurrentRating(null))
 
 	const handleFormSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
@@ -39,7 +37,6 @@ export const RatingPanel: FC<RatingPanelProps> = ({ setSelectedRating }) => {
 					>
 						<input
 							type='radio'
-							id={`rating${rating}`}
 							name='rating'
 							onChange={() => setCurrentRating(rating)}
 							checked={rating === currentRating}

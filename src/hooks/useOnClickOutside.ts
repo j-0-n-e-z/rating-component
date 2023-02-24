@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 
 export function useOnClickOutside(
 	ref: React.RefObject<HTMLElement>,
-	selectedRating: number | null,
 	handler: () => void
 ) {
 	useEffect(() => {

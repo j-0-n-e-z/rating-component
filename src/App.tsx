@@ -8,7 +8,7 @@ function App() {
 
   return (
 		<div className='App'>
-			{selectedRating === null ? (
+			{!selectedRating ? (
 				<RatingPanel
 					setSelectedRating={setSelectedRating}
 				/>
