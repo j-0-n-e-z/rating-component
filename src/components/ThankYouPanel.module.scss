@@ -1,0 +1,16 @@
+.selected-rating {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	background-color: var(--dark-blue);
+	border-radius: 40px;
+	padding: 8px 20px;
+	color: var(--primary);
+}
+
+.center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}

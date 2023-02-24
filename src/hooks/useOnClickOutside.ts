@@ -2,11 +2,16 @@ import { useEffect } from 'react'
 
 export function useOnClickOutside(
 	ref: React.RefObject<HTMLElement>,
+	selectedRating: number | null,
 	handler: () => void
 ) {
 	useEffect(() => {
-		function handleClickOutside(event: MouseEvent) {
-			if (ref.current && !ref.current.contains(event.target as Node)) {
+		function handleClickOutside(e: MouseEvent) {
+			if (
+				!['1', '2', '3', '4', '5', 'submit'].includes(
+					(e.target as HTMLElement).innerText.toLowerCase()
+				)
+			) {
 				handler()
 			}
 		}
@@ -14,5 +19,5 @@ export function useOnClickOutside(
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside)
 		}
-	}, [ref])
+	}, [])
 }

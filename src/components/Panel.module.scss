@@ -1,0 +1,20 @@
+.panel {
+	background: radial-gradient(circle at top, #252935, #181f29 80%);
+	height: 420px;
+	width: 420px;
+	padding: 38px;
+	border-radius: 30px;
+}
+
+.title {
+	margin-top: 25px;
+	color: var(--white);
+	font-size: 28px;
+}
+
+.text {
+	color: var(--medium-grey);
+	font-size: 15.3px;
+	line-height: 1.4rem;
+	margin-top: 10px;
+}
