@@ -1,15 +1,14 @@
 import { useEffect } from 'react'
 
-export function useOnClickOutside(
-	handler: () => void
-) {
+export function useOnClickOutside(handler: () => void) {
 	useEffect(() => {
 		function handleClickOutside(e: MouseEvent) {
-			if (
-				!['1', '2', '3', '4', '5', 'submit'].includes(
-					(e.target as HTMLElement).innerText.toLowerCase()
-				)
-			) {
+			const isClickedOutside = !(
+				e.target instanceof HTMLLabelElement ||
+				e.target instanceof HTMLButtonElement
+			)
+
+			if (isClickedOutside) {
 				handler()
 			}
 		}
