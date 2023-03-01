@@ -4,7 +4,7 @@ import { RatingPanel } from './components/RatingPanel'
 import { ThankYouPanel } from './components/ThankYouPanel'
 
 function App() {
-  const [selectedRating, setSelectedRating] = useState<number | null>(null)
+  const [selectedRating, setSelectedRating] = useState<number | undefined>()
 
   return (
 		<div className='App'>
