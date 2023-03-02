@@ -3,6 +3,7 @@ import { FC, useState } from 'react'
 import panelStyles from './Panel.module.scss'
 import styles from './RatingPanel.module.scss'
 import { useOnClickOutside } from '../hooks/useOnClickOutside'
+import starIcon from '../../public/icon-star.svg'
 
 type RatingPanelProps = {
 	setSelectedRating: (rating: number | undefined) => void
@@ -11,7 +12,11 @@ type RatingPanelProps = {
 export const RatingPanel: FC<RatingPanelProps> = ({ setSelectedRating }) => {
 	const [currentRating, setCurrentRating] = useState<number | undefined>()
 
-	useOnClickOutside(() => setCurrentRating(undefined))
+	useOnClickOutside(
+		() => setCurrentRating(undefined),
+		HTMLLabelElement,
+		HTMLButtonElement
+	)
 
 	const handleFormSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
@@ -19,8 +24,8 @@ export const RatingPanel: FC<RatingPanelProps> = ({ setSelectedRating }) => {
 	}
 
 	return (
-		<form onSubmit={handleFormSubmit} className={panelStyles.panel}>
-			<img className={styles.star} src='./icon-star.svg' alt='star'></img>
+		<form className={panelStyles.panel} onSubmit={handleFormSubmit}>
+			<img className={styles.star} src={starIcon} alt='star'/>
 			<h1 className={panelStyles.title}>How did we do?</h1>
 			<p className={panelStyles.text}>
 				Please let us know how we did with your support request. All feedback is

@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import panelStyles from './Panel.module.scss'
 import styles from './ThankYouPanel.module.scss'
+import thankYouImage from '../../public/illustration-thank-you.svg'
 
 type ThankYouPanelProps = {
 	selectedRating: number
@@ -11,7 +12,7 @@ export const ThankYouPanel: FC<ThankYouPanelProps> = ({
 }) => {
 	return (
 		<div className={`${panelStyles.panel} ${styles.center}`}>
-			<img src='./illustration-thank-you.svg' alt='thank-you' />
+			<img src={thankYouImage} alt='thank-you' />
 			<p className={styles['selected-rating']}>
 				You selected {selectedRating} out of 5
 			</p>
